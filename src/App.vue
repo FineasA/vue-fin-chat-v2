@@ -70,7 +70,7 @@ export default {
         message: "",
       },
       messages: [],
-      socket: io("http://localhost:3000"),
+      socket: io("https://vue-fin-chat.herokuapp.com/"),
     };
   },
   mounted() {
