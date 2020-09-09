@@ -10,24 +10,23 @@ export default {
   props: ["socket"],
   data() {
     return {
-      broadcastedMsg: ""
+      broadcastedMsg: "",
     };
   },
   mounted() {
     //check if user is typing
-    EventBus.$on("user-typing", typing => {
+    EventBus.$on("user-typing", (typing) => {
       if (typing) {
         this.socket.emit("user-typing");
       }
     });
 
-    this.socket.on("user-typing", userTypingMsg => {
-      console.log(userTypingMsg);
+    this.socket.on("user-typing", (userTypingMsg) => {
       this.broadcastedMsg = userTypingMsg;
     });
 
     //check for when user is not typing
-    EventBus.$on("user-not-typing", typing => {
+    EventBus.$on("user-not-typing", (typing) => {
       if (!typing) {
         this.socket.emit("user-not-typing");
       }
@@ -36,7 +35,7 @@ export default {
     this.socket.on("user-not-typing", () => {
       this.broadcastedMsg = "";
     });
-  }
+  },
 };
 </script>
 

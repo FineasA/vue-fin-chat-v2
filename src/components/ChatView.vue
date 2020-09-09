@@ -18,15 +18,15 @@
 export default {
   props: ["messages", "socket"],
   updated() {
-    console.log(this.messages);
+    // console.log(this.messages);
   },
   computed: {
     messagesFilter() {
-      return this.messages.filter(msg => {
+      return this.messages.filter((msg) => {
         return msg.message.length > 0;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
