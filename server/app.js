@@ -10,7 +10,7 @@ const app = express();
 const { userJoin, getCurrentUser } = require("../utils/users.js");
 const { formatMessage } = require("../utils/messages.js");
 
-app.use("/", serveStatic(path.join(__dirname, "/dist")));
+app.use("/", serveStatic(path.join(__dirname, "../dist")));
 app.get(/.*/, (req, res) => {
   res.sendFile(__dirname + "../dist/index.html");
 });
