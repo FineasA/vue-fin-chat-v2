@@ -10,7 +10,7 @@ const app = express();
 const { userJoin, getCurrentUser } = require("../utils/users.js");
 const { formatMessage } = require("../utils/messages.js");
 
-app.use("/", serverStatic(path.join(__dirname, "/dist")));
+app.use("/", serveStatic(path.join(__dirname, "/dist")));
 
 const PORT = process.env.PORT || 3000;
 
