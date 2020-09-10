@@ -19,11 +19,9 @@ export default {
   created() {
     this.socket.on("send-users-in-chat", (chatRoomUsers) => {
       this.usersInChat = chatRoomUsers;
-      // console.log(this.usersInChat);
     });
 
     this.socket.on("send-updated-users-in-chat", (filteredChat) => {
-      console.log(filteredChat);
       this.usersInChat = filteredChat;
     });
   },

@@ -1,11 +1,2 @@
-{"username":"fin","password":"caca1234","loggedIn":true,"inChatRoom":false,"chatRoomJoined":null,"_id":"jaVqyERXOUsSAtcT","createdAt":{"$$date":1599683715776},"updatedAt":{"$$date":1599683715776}}
-{"username":"fin","password":"caca1234","loggedIn":true,"inChatRoom":true,"chatRoomJoined":"React","_id":"jaVqyERXOUsSAtcT","createdAt":{"$$date":1599683715776},"updatedAt":{"$$date":1599683716715}}
-{"username":"fin","password":"caca1234","loggedIn":true,"inChatRoom":true,"chatRoomJoined":"React","_id":"jaVqyERXOUsSAtcT","createdAt":{"$$date":1599683715776},"updatedAt":{"$$date":1599683716727}}
-{"username":"diana","password":"caca1234","loggedIn":true,"inChatRoom":false,"chatRoomJoined":null,"_id":"K711DVk0Icci09sh","createdAt":{"$$date":1599683721499},"updatedAt":{"$$date":1599683721499}}
-{"username":"diana","password":"caca1234","loggedIn":true,"inChatRoom":true,"chatRoomJoined":"React","_id":"K711DVk0Icci09sh","createdAt":{"$$date":1599683721499},"updatedAt":{"$$date":1599683722354}}
-{"username":"diana","password":"caca1234","loggedIn":true,"inChatRoom":true,"chatRoomJoined":"React","_id":"K711DVk0Icci09sh","createdAt":{"$$date":1599683721499},"updatedAt":{"$$date":1599683722369}}
-{"username":"diana","password":"caca1234","loggedIn":false,"inChatRoom":false,"chatRoomJoined":null,"_id":"K711DVk0Icci09sh","createdAt":{"$$date":1599683721499},"updatedAt":{"$$date":1599683725172}}
-{"username":"diana","password":"caca1234","loggedIn":true,"inChatRoom":true,"chatRoomJoined":"React","_id":"K711DVk0Icci09sh","createdAt":{"$$date":1599683721499},"updatedAt":{"$$date":1599683740478}}
-{"username":"diana","password":"caca1234","loggedIn":true,"inChatRoom":true,"chatRoomJoined":"React","_id":"K711DVk0Icci09sh","createdAt":{"$$date":1599683721499},"updatedAt":{"$$date":1599683740491}}
-{"username":"diana","password":"caca1234","loggedIn":false,"inChatRoom":false,"chatRoomJoined":null,"_id":"K711DVk0Icci09sh","createdAt":{"$$date":1599683721499},"updatedAt":{"$$date":1599683744111}}
-{"username":"fin","password":"caca1234","loggedIn":false,"inChatRoom":false,"chatRoomJoined":null,"_id":"jaVqyERXOUsSAtcT","createdAt":{"$$date":1599683715776},"updatedAt":{"$$date":1599683746754}}
+{"username":"diana","password":"caca1234","loggedIn":false,"inChatRoom":false,"chatRoomJoined":null,"_id":"fIWkj3kDARS8Z7H4","createdAt":{"$$date":1599758170789},"updatedAt":{"$$date":1599758630134}}
+{"username":"fin","password":"caca1234","loggedIn":false,"inChatRoom":false,"chatRoomJoined":null,"_id":"iZCtv9cnxQjU2RHl","createdAt":{"$$date":1599758163170},"updatedAt":{"$$date":1599758631877}}

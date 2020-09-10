@@ -70,7 +70,10 @@ export default {
         message: "",
       },
       messages: [],
-      socket: io("https://vue-fin-chat.herokuapp.com/"),
+      //if local make sure localhost:3000
+      //if not local make sure heroku link https://vue-fin-chat.herokuapp.com/
+      //also makesure its node server.js not nodemon when on heroku, nodemon when local
+      socket: io("localhost:3000"),
     };
   },
   mounted() {
@@ -110,7 +113,7 @@ export default {
       this.roomSelected = true;
       this.chatRoomSelected = chatRoomSelected;
       //User sent to joined-chat socket event
-      console.log("User to be sent: ", this.user);
+
       this.socket.emit("joined-chat", chatRoomSelected, this.user);
     });
 

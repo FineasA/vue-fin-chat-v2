@@ -10,11 +10,18 @@ const app = express();
 const { userJoin, getCurrentUser } = require("../utils/users.js");
 const { formatMessage } = require("../utils/messages.js");
 
-app.use("/", serveStatic(path.join(__dirname, "../dist")));
-app.get(/.*/, (req, res) => {
-  res.sendFile(__dirname + "../dist/index.html");
-});
-
+if (!process.env.PORT || process.env.NODE_ENV === "development") {
+  app.use("/", serveStatic(path.join(__dirname, "../public")));
+  app.get(/.*/, (req, res) => {
+    res.sendFile(__dirname + "../public/index.html");
+  });
+} else {
+  //when in production
+  app.use("/", serveStatic(path.join(__dirname, "../dist")));
+  app.get(/.*/, (req, res) => {
+    res.sendFile(__dirname + "../dist/index.html");
+  });
+}
 const PORT = process.env.PORT || 3000;
 
 server = app.listen(PORT, () => {
@@ -154,7 +161,7 @@ io.on("connection", (socket) => {
     );
 
     socket.on("send-message", (message) => {
-      io.emit("message", {
+      io.to(chatRoomSelected).emit("message", {
         message: formatMessage(user_recieved.username, message),
         id: user_recieved.id,
       });
@@ -200,24 +207,18 @@ io.on("connection", (socket) => {
       let filteredChatRoom = chatRoomUsers[lowerCaseRoom].filter(
         (user) => user.username !== userDisconnected.username
       );
-      console.log("Filtered Chatroom: ", filteredChatRoom);
       chatRoomUsers[lowerCaseRoom] = filteredChatRoom;
 
-      // io.to(chatRoomSelected).emit("send-users-in-chat", filteredChatRoom);
-      io.to(chatRoomSelected).emit(
-        "send-updated-users-in-chat",
-        filteredChatRoom
-      );
+      socket
+        .to(chatRoomSelected)
+        .emit("send-updated-users-in-chat", filteredChatRoom);
 
       //update chatroomuserslist by filtering by name
-      //somehow need to get the chatroomname when user disconnects to filter easily
     });
   });
 
   //check for disconnect at any point
-
   socket.on("disconnect", (reason) => {
-    console.log("Disconnect reason: ", reason);
     let userDisconnected = getCurrentUser(socket.id);
 
     if (userDisconnected === undefined) {
@@ -226,8 +227,6 @@ io.on("connection", (socket) => {
         username: "null",
         id: socket.id,
       };
-    } else if (userDisconnected !== undefined) {
-      console.log("NOT UNDEFINED!");
     }
 
     console.log(
