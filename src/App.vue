@@ -73,7 +73,7 @@ export default {
       //if local make sure localhost:3000
       //if not local make sure heroku link https://vue-fin-chat.herokuapp.com/
       //also makesure its node server.js not nodemon when on heroku, nodemon when local
-      socket: io("localhost:3000"),
+      socket: io("https://vue-fin-chat.herokuapp.com/"),
     };
   },
   mounted() {
